@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: devops-jenkins-ci-cd
+  name: devops-jenkins-ci-cd
+  #namespace: devops-jenkins-ci-cd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-jenkins-ci-cd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: devops-jenkins-ci-cd
+    spec:
+      containers:
+      - image: sbalavardhan/devops-jenkins-ci-cd:latest
+        name: devops-jenkins-ci-cd
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

@@ -18,7 +18,7 @@ spec:
         app: devops-jenkins-ci-cd
     spec:
       containers:
-      - image: sbalavardhan/devops-jenkins-ci-cd:${IMAGE_TAG}
+      - image: sbalavardhan/devops-jenkins-ci-cd:gaurav
         name: devops-jenkins-ci-cd
         ports:
         - containerPort: 8080

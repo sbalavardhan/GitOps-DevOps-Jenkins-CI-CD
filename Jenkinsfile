@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "jenkins-agent"
+        label "Infraserver"
     }
     environment {
         APP_NAME = "devops-jenkins-ci-cd"

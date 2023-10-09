@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: devops-jenkins-ci-cd
-  name: devops-jenkins-ci-cd
-  #namespace: devops-jenkins-ci-cd
+    app: devops-jenkins-ci-cd:${IMAGE_TAG}
+  name: devops-jenkins-ci-cd:${IMAGE_TAG}
+  #namespace: devops-jenkins-ci-cd:${IMAGE_TAG}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: devops-jenkins-ci-cd
+      app: devops-jenkins-ci-cd:${IMAGE_TAG}
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: devops-jenkins-ci-cd
+        app: devops-jenkins-ci-cd:${IMAGE_TAG}
     spec:
       containers:
-      - image: sbalavardhan/devops-jenkins-ci-cd:latest
-        name: devops-jenkins-ci-cd
+      - image: sbalavardhan/devops-jenkins-ci-cd:${IMAGE_TAG}
+        name: devops-jenkins-ci-cd:${IMAGE_TAG}
         ports:
         - containerPort: 8080
         resources: {}
